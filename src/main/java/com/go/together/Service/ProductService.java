@@ -79,6 +79,17 @@ public class ProductService {
 
 
 
+
+    public List<ProductVo> sortCode(ProductVo productVo){
+        if(productVo == null){
+            throw new IllegalArgumentException("정보가 없습니다");
+        }
+        return productMapper.classifyMajorMinor(productVo);
+    }
+
+
+
+
 //    상품 삭제
 
     public int remove(Long productNumber){

@@ -28,6 +28,10 @@ public interface ProductMapper {
     public List<ProductVo> selectAllProduct(ProductVo productVo);
 
 
+// MAJOR, MINOR 구분
+    public List<ProductVo> classifyMajorMinor(ProductVo productVo);
+
+
     public int delete(Long productNumber);
 
     public int sizeDelete(Long productNumber);

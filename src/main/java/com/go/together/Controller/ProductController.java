@@ -52,6 +52,22 @@ public class ProductController {
     }
 
 
+  @PostMapping("/divideCode")
+    public List<ProductVo> divideCode(@RequestBody ProductVo productVo) {
+        Long  categoryMajorCode= productVo.getCategoryMajorCode();
+        Long categoryMinorCode=productVo.getCategoryMinorCode();
+
+
+      System.out.println(categoryMajorCode + " MajorCode가 몇인가 ????????!!");
+      System.out.println(categoryMinorCode + "   MinorCode 가 몇인가 !@!@!@!@!@");
+
+
+
+        List<ProductVo> mnList = productService.sortCode(productVo);
+        return mnList;
+    }
+
+
     @PostMapping("/productView")
     public List<ProductVo> productView(@RequestBody ProductVo productVo){
         Long productNumber = productVo.getProductNumber();
