@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+            <typeAlias type="com.junghyun.myownboard.Dto.UserDto" alias="userDto"/>
+        <typeAlias type="com.junghyun.myownboard.Dto.BoardDto" alias="boardDto"/>
+        <typeAlias type="com.junghyun.myownboard.Vo.BoardVo" alias="boardVo"/>
+
+
+
+    </typeAliases>
+</configuration>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시물 상세보기</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="title">자유게시판</h1>
+    <div class="post-wrap">
+        <div class="post-wrap-box" th:each="${board : boardList}">
+            <div class="post-header">
+                <h2 class="post-title" th:text="${board.boardTitle}"></h2>
+                <p class="post-info" th:text="'작성자: '+ ${board.userId} + ' | 작성일 : ' +${board.boardRegisterDate} + ' | 수정일' + ${board.boardUpdateDate} "></p>
+            </div>
+            <div class="post-body">
+                <div class="post-content" th:text="${board.boardContent}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
