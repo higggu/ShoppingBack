@@ -1,0 +1,35 @@
+<!DOCTYPE html >
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>보드메인창</title>
+</head>
+<body>
+<h1 class="title">커뮤니티 게시판</h1>
+
+<div class="container">
+<div class="btn-wrap">
+    <button class="add-post-btn" type="button">새 게시글 작성</button>
+</div>
+
+
+<div class="board-item" th:each="board : ${boardList}">
+    <div class="board-item-text">
+        <!--        타임리프를 이용하여 링크를 거는 경우
+                    쿼리스트링을 사용하고 싶을 때 ()를 사용한다.
+         -->
+        <a th:href="@{/board/view(boardNumber=${board.boardNumber})}">
+            <h3 class="board-item-title" th:text="${board.boardTitle}"></h3>
+        </a>
+        <span class="board-item-author" th:text="${board.userId}"></span>
+    </div>
+
+
+</div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script type="module" th:src="@{/js/board/board.js}"></script>
+</body>
+</html>

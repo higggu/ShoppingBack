@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junghyun.myownboard.mapper.BoardMapper">
+
+
+    <insert id="insert">
+        <selectKey keyProperty="boardNumber" order="BEFORE" resultType="long">
+            SELECT SEQ_BOARD.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO TBL_BOARD(BOARD_NUMBER, BOARD_TITLE, BOARD_CONTENT, USER_NUMBER)
+        VALUES (#{boardNumber}, #{boardTitle}, #{boardContent}, #{userNumber})
+    </insert>
+
+
+    <select id="selectAll" resultType="boardVo">
+        SELECT BOARD_NUMBER, BOARD_TITLE, BOARD_CONTENT,
+               B.USER_NUMBER , U.USER_ID
+        FROM TBL_BOARD B JOIN TBL_USER U
+                              ON  B.USER_NUMBER =U.USER_NUMBER
+        ORDER BY BOARD_NUMBER DESC
+    </select>
+
+
+    <select id="selectOne">
+        SELECT B.BOARD_NUMBER, B.BOARD_TITLE, B.BOARD_CONTENT,
+               B.USER_NUMBER , U.USER_ID
+        FROM TBL_BOARD B JOIN TBL_USER U
+                              ON B.BOARD_NUMBER=#{boardNumber} AND B.USER_NUMBER=U.USER_NUMBER
+    </select>
+
+</mapper>
