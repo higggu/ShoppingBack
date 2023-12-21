@@ -104,7 +104,6 @@
 
 
 <select id="cartUserNumberTotalPrice">
-
     SELECT U.USER_NUMBER,
            SUM(P.PRODUCT_PRICE * C.CART_COUNT) AS TOTAL_PRICE
     FROM TBL_USER U
