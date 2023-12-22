@@ -30,4 +30,6 @@ public interface CartMapper {
     public int deleteCart(Long cartNumber);
 
 
+// 장바구니에서 색상 , 사이즈변경
+    public int changeSizeColor(CartVo cartVo);
 }

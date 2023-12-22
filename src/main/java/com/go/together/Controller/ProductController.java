@@ -51,7 +51,7 @@ public class ProductController {
         return productVoList;
     }
 
-
+// body json 형식으로 보내는 컨트롤러 post
   @PostMapping("/divideCode")
     public List<ProductVo> divideCode(@RequestBody ProductVo productVo) {
         Long  categoryMajorCode= productVo.getCategoryMajorCode();
@@ -62,6 +62,23 @@ public class ProductController {
       System.out.println(categoryMinorCode + "   MinorCode 가 몇인가 !@!@!@!@!@");
 
 
+
+        List<ProductVo> mnList = productService.sortCode(productVo);
+        return mnList;
+    }
+
+//  url에 직접 key ,value 를 보여주는 get
+    @GetMapping("/divideCode")
+    public List<ProductVo> divideCodeGet(
+            @RequestParam(name = "categoryMajorCode", required = false) Long categoryMajorCode,
+            @RequestParam(name = "categoryMinorCode", required = false) Long categoryMinorCode) {
+
+        System.out.println(categoryMajorCode + " MajorCode가 몇인가 ????????!!");
+        System.out.println(categoryMinorCode + " MinorCode가 몇인가 !@!@!@!@!@");
+
+        ProductVo productVo = new ProductVo();
+        productVo.setCategoryMajorCode(categoryMajorCode);
+        productVo.setCategoryMinorCode(categoryMinorCode);
 
         List<ProductVo> mnList = productService.sortCode(productVo);
         return mnList;

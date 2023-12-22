@@ -103,14 +103,32 @@
     </update>
 
 
+
+    <update id="changeSizeColor">
+        UPDATE TBL_CART
+        <set>
+            <if test="selectedColor != null">
+                SELECTED_COLOR = #{selectedColor},
+            </if>
+            <if test="selectedSize != null">
+                SELECTED_SIZE = #{selectedSize},
+            </if>
+        </set>
+        WHERE CART_NUMBER = #{cartNumber}
+    </update>
+
+
+
+
 <select id="cartUserNumberTotalPrice">
     SELECT U.USER_NUMBER,
-           SUM(P.PRODUCT_PRICE * C.CART_COUNT) AS TOTAL_PRICE
+           SUM(P.PRODUCT_PRICE * C.CART_COUNT) AS TOTAL_PRICE,
+           SUM(P.PRODUCT_PRICE*(1-(P.DISCOUNT_RATE/100)))*C.CART_COUNT AS TOTAL_DISCOUNT_PRICE
     FROM TBL_USER U
              JOIN TBL_CART C ON U.USER_NUMBER = C.USER_NUMBER
              JOIN TBL_PRODUCT P ON P.PRODUCT_NUMBER = C.PRODUCT_NUMBER
     WHERE C.USER_NUMBER =#{userNumber}
-    GROUP BY U.USER_NUMBER
+    GROUP BY U.USER_NUMBER,C.CART_COUNT
 </select>
 
 

@@ -1,6 +1,7 @@
 package com.go.together.Controller;
 
 
+import com.go.together.Mapper.CartMapper;
 import com.go.together.Service.CartService;
 import com.go.together.Service.FileService;
 import com.go.together.Vo.CartVo;
@@ -10,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,6 +20,7 @@ import java.util.List;
 public class CartController {
     private final CartService cartService;
     private final FileService fileService;
+    private final CartMapper cartMapper;
 
 
 
@@ -59,5 +62,28 @@ public class CartController {
 
 
 
+//   장바구니 사이즈와 색상변경
+    @PostMapping("/cartChangeOption")
+    public int cartChangeOption(@RequestBody CartVo cartVo){
+    int result = cartMapper.changeSizeColor(cartVo);
+    return result;
+}
+
+
+//장바구니 카트 삭제
+// 장바구니 카트 삭제
+@PostMapping("deleteCart")
+public int deleteCart(@RequestBody Map<String, List<Long>> ArrayCartNumber) {
+    List<Long> cartNumbers = ArrayCartNumber.get("cartNumber");
+
+    int result = 0; // 초기화
+
+    for (Long cartNumber : cartNumbers) {
+        result = cartMapper.deleteCart(cartNumber);
+        // 만약 deleteCart 메서드가 실패할 경우, 이후 반복문은 계속 진행됩니다.
+    }
+
+    return result; // 마지막에 최종적으로 deleteCart 메서드의 결과 반환
+}
 
 }
