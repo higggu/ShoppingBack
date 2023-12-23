@@ -7,6 +7,7 @@
         <typeAlias type="com.go.together.Dto.ProductDto" alias="productDto"/>
         <typeAlias type="com.go.together.Dto.FileDto" alias="fileDto"/>
         <typeAlias type="com.go.together.Dto.CartDto" alias="cartDto"/>
+        <typeAlias type="com.go.together.Dto.LikeDto" alias="likeDto"/>
         <typeAlias type="com.go.together.Vo.ProductVo" alias="productVo"/>
         <typeAlias type="com.go.together.Vo.CartVo" alias="cartVo"/>
         <typeAlias type="com.go.together.Vo.LikeVo" alias="likeVo"/>

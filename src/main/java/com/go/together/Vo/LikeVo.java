@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 public class LikeVo {
     private Long likeNumber;
+    private int likeStatus;
     private int userNumber;
     private String userName;
     private Long productNumber;

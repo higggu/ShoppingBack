@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.go.together.Mapper.FileMapper">
+<mapper namespace="com.go.together.Mapper.LikeMapper">
 
 
 
 
-<insert id="insertLike" parameterType="likeVo">
-    INSERT INTO TBL_LIKE(LIKE_NUMBER, PRODUCT_NUMBER,USER_NUMBER)
-    VALUES (SEQ_LIKE.nextval,#{productNumber},#{userNumber})
+<insert id="insertLike">
+    <selectKey keyProperty="likeNumber" order="BEFORE" resultType="long">
+        SELECT SEQ_LIKE.NEXTVAL FROM DUAL
+    </selectKey>
+    INSERT INTO TBL_LIKE(LIKE_NUMBER, PRODUCT_NUMBER,USER_NUMBER,LIKE_STATUS)
+    VALUES (#{likeNumber},#{productNumber},#{userNumber},1)
 </insert>
 
 
 
+    <update id="unlike" parameterType="likeVo">
+        UPDATE TBL_LIKE
+        SET LIKE_STATUS = 0
+        WHERE PRODUCT_NUMBER = #{productNumber} AND USER_NUMBER = #{userNumber}
+    </update>
 
 
-<select id="selectLike" parameterType="likeVo">
-    SELECT L.LIKE_NUMBER
-         ,U.USER_NUMBER,U.USER_NAME
-         , P.PRODUCT_NUMBER,P.PRODUCT_NAME
-         ,F.FILE_NAME,F.FILE_UPLOAD_PATH,F.FILE_UUID
-    FROM TBL_USER U
-             JOIN TBL_LIKE L ON U.USER_NUMBER = L.LIKE_NUMBER
-             JOIN TBL_PRODUCT P ON P.PRODUCT_NUMBER = L.LIKE_NUMBER
-             LEFT JOIN TBL_FILE F ON F.PRODUCT_NUMBER =P.PRODUCT_NUMBER
 
-            WHERE USER_NUMBER=#{userNumber};
-</select>
+    <select id="selectLikeStatus" parameterType="likeVo">
+        SELECT L.LIKE_NUMBER, LIKE_STATUS, U.USER_NUMBER, U.USER_NAME,
+               P.PRODUCT_NUMBER, P.PRODUCT_NAME, F.FILE_NAME, F.FILE_UPLOAD_PATH, F.FILE_UUID
+        FROM TBL_USER U
+                 JOIN TBL_LIKE L ON U.USER_NUMBER = L.USER_NUMBER
+                 JOIN TBL_PRODUCT P ON P.PRODUCT_NUMBER = L.PRODUCT_NUMBER
+                 LEFT JOIN (
+            SELECT FILE_NUMBER, FILE_UPLOAD_PATH, FILE_UUID, FILE_NAME, PRODUCT_NUMBER
+            FROM (
+                     SELECT FILE_NUMBER, FILE_UPLOAD_PATH, FILE_UUID, FILE_NAME, PRODUCT_NUMBER,
+                            RANK() OVER(PARTITION BY PRODUCT_NUMBER ORDER BY FILE_NUMBER) RK
+                     FROM TBL_FILE
+                 ) T
+            WHERE RK = 1
+        ) F ON F.PRODUCT_NUMBER = P.PRODUCT_NUMBER
+        WHERE USER_NUMBER = #{userNumber} AND L.LIKE_STATUS = 1
+    </select>
 
 
 
