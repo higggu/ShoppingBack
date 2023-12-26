@@ -1,7 +1,6 @@
 package com.go.together.Util;
 
 
-import com.go.together.Dto.UserDto;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -12,6 +11,8 @@ public class MailUtil {
 
     static final String smtp_host = "smtp.gmail.com";
     static final int smtp_port = 465;  // TLS : 587, SSL : 465
+//465는 일반적으로 SSL(Secure Sockets Layer)을 사용하는 SMTP(Simple Mail Transfer Protocol) 서버의 포트 번호입니다.
+// SSL은 데이터를 암호화하여 안전한 통신을 제공하는 보안 프로토콜 중 하나입니다.
 
     public static void Send(String userEmail,String randomCode, String myEmail, String myPw) throws Exception {
         System.out.println("전송할 이메일 주소" + userEmail );
@@ -44,8 +45,8 @@ public class MailUtil {
 
             // 내용
             message.setText("보안을 위해 비밀번호를 변경하는 메일입니다.\n\n " +
-                    "새로운 비밀번호를 아래의 코드로 변경하였으니 로그인 후 설정에서 비밀번호를 변경하시길 바랍니다.\n\n" +
-                    "새 비밀번호 : "+randomCode);
+                    "무작위로 생성된 인증번호를 보내드렸습니다. 아래의 인증번호를 사용하여 비밀번호를 변경해주세요.\n.\n\n" +
+                    "인증번호 : "+randomCode);
 
             // 발송
             Transport.send(message);

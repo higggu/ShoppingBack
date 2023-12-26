@@ -39,7 +39,7 @@ public class ProductController {
         return result;
     }
 
-
+//관리자 페이지 목록   AND ALL 카테고리에 이거 넣으면됨.
     @PostMapping("/fileList")
     public List<ProductVo> fileList(@RequestBody ProductVo productVo) {
         Integer userNumber = productVo.getUserNumber();
@@ -67,7 +67,7 @@ public class ProductController {
         return mnList;
     }
 
-//  url에 직접 key ,value 를 보여주는 get
+//  url에 직접 key ,value 를 보여주는
     @GetMapping("/divideCode")
     public List<ProductVo> divideCodeGet(
             @RequestParam(name = "categoryMajorCode", required = false) Long categoryMajorCode,

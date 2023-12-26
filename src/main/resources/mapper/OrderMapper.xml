@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.go.together.Mapper.OrderMapper">
+
+    <!-- 여기에 SQL 쿼리와 MyBatis 매퍼 코드를 작성합니다. -->
+
+    <insert id="orderInsert">
+        <selectKey keyProperty="orderNumber" resultType="long" order="BEFORE">
+            SELECT SEQ_ORDER.nextval from DUAL
+        </selectKey>
+
+    </insert>
+
+
+</mapper>

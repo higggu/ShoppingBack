@@ -27,14 +27,18 @@ public class CartController {
 @PostMapping("/addCart")
     public int addCart( @RequestBody CartVo cartVo){
     int result =cartService.registerCart(cartVo);
+
+    System.out.println(result+   "결과값?");
+
     return result;
 }
 
 @PostMapping("/userCart")
-    public List<CartVo> userCart(@RequestBody CartVo cartvo){
+    public List<CartVo> userCartList(@RequestBody CartVo cartvo){
     Integer userNumber=cartvo.getUserNumber();
 
     List<CartVo> userCartInfo = cartService.userCartList(userNumber);
+    System.out.println(userCartInfo +  " 결과값 ~@!@!@!@!@");
     return userCartInfo;
 
 }
@@ -72,7 +76,7 @@ public class CartController {
 
 //장바구니 카트 삭제
 // 장바구니 카트 삭제
-@PostMapping("deleteCart")
+@PostMapping("/deleteCart")
 public int deleteCart(@RequestBody Map<String, List<Long>> ArrayCartNumber) {
     List<Long> cartNumbers = ArrayCartNumber.get("cartNumber");
 
