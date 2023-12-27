@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -43,6 +44,23 @@ public class CartController {
 
 }
 
+//장바구니에서 결제제창 넘어갈때 원하는 장바구니 물품 골라서 결제창으로 넘어가는 URI
+    @PostMapping("/pickCart")
+    public List<CartVo> pickCart(@RequestBody Map<String, List<Long>> ArrayCartNumber) {
+        List<Long> cartNumbers = ArrayCartNumber.get("cartNumber");
+        List<CartVo> results = new ArrayList<>();
+
+        for (Long cartNumber : cartNumbers) {
+            List<CartVo> result = cartService.pickCartAll(cartNumber);
+            results.addAll(result); // 모든 요소를 추가
+            // 만약 deleteCart 메서드가 실패할 경우, 이후 반복문은 계속 진행됩니다.
+        }
+
+        return results; // 결과 리스트 반환
+    }
+
+
+//
     @PostMapping("/getAllPrice")
     public CartVo getAllPrice(@RequestBody CartVo cartvo) {
         Integer userNumber=cartvo.getUserNumber();
@@ -57,6 +75,10 @@ public class CartController {
     int result=cartService.upCount(cartNumber);
     return result;
     }
+
+
+
+
 //수량변경
     @PostMapping("/changeCount")
     public int changeCount(@RequestBody CartVo cartVo){
@@ -86,6 +108,8 @@ public int deleteCart(@RequestBody Map<String, List<Long>> ArrayCartNumber) {
         result = cartMapper.deleteCart(cartNumber);
         // 만약 deleteCart 메서드가 실패할 경우, 이후 반복문은 계속 진행됩니다.
     }
+
+    System.out.println(result+"@@@@@@@@@@@@@@@@결과값 ??????");
 
     return result; // 마지막에 최종적으로 deleteCart 메서드의 결과 반환
 }
