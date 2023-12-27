@@ -31,4 +31,16 @@
 | 💾 Database | ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) |
 | 🗄️ Server | ![Apache Tomcat](https://img.shields.io/badge/apache%20tomcat-%23F8DC75.svg?style=for-the-badge&logo=apache-tomcat&logoColor=black) |  
 | 📤 Version Control | ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) |
-  
+
+
+
+</br>
+</br>
+
+
+  # ✔주요 업무 및 구현 기능
+
+ ### 회원기능
+ 회원가입, 로그인, 아이디/비밀번호 찾기, 이메일 인증 등의 회원 관리 기능을 구현하였습니다.
+ 사용자의 정보를 안전하게 관리하고, 정확한 인증 절차를 통해 보안을 강화하였습니다.
+
