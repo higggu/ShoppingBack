@@ -56,8 +56,7 @@
 </br>
 </br>
  ### 비밀번호 찾기 ( 이메일 인증 , SHA-256 암호화)
-![편집-동영상](https://github.com/SuperMiniBeans/Back/assets/126428422/695970c3-67a6-4bf3-84c0-f128696d69c4)
-
+![편집-동영상](https://github.com/SuperMiniBeans/Back/assets/126428422/44332022-ce6d-4bf4-9164-843d85adaacd)
 
 ![암호화](https://github.com/SuperMiniBeans/Back/assets/126428422/2725e9c0-d34b-44f8-b57f-5ca5dd9a6453)
 
