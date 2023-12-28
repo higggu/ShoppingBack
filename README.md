@@ -46,8 +46,10 @@
 
 </br>
 </br>
+
  ### 회원가입
-<아이디 중복확인> , <비밀번호 암호화>
+ 
+ <아이디 중복확인> , <비밀번호 암호화>
  
  ![회원가입](https://github.com/SuperMiniBeans/Back/assets/126428422/88ab8603-79c0-49b6-a463-1ce4184f291f)
 
@@ -55,7 +57,9 @@
 
 </br>
 </br>
- ### 비밀번호 찾기 ( 이메일 인증 , SHA-256 암호화)
+
+### 비밀번호 변경 
+ ( 이메일 인증 , SHA-256 암호화)
 
 ![편집-동영상](https://github.com/SuperMiniBeans/Back/assets/126428422/44332022-ce6d-4bf4-9164-843d85adaacd)
 
