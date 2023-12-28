@@ -21,6 +21,8 @@ public class CartVo {
     private Double discountRate; // 추가: 할인율
     private Double discountPrice; // 추가: 할인가
     private Double totalDiscountPrice; // 추가: 할인가
+    private List<String> productSizes;
+    private List<String> productColors;
     private String productName;
     private String selectedColor;
     private String selectedSize;
