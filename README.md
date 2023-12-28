@@ -44,3 +44,18 @@
  회원가입, 로그인, 아이디/비밀번호 찾기, 이메일 인증 등의 회원 관리 기능을 구현하였습니다.
  사용자의 정보를 안전하게 관리하고, 정확한 인증 절차를 통해 보안을 강화하였습니다.
 
+
+ ### 회원가입
+<아이디 중복확인> , <비밀번호 암호화>
+ 
+ ![회원가입](https://github.com/SuperMiniBeans/Back/assets/126428422/88ab8603-79c0-49b6-a463-1ce4184f291f)
+
+![암호화](https://github.com/SuperMiniBeans/Back/assets/126428422/ffd1fc1a-a92e-4bf0-b69e-0395f4259277)
+
+
+ ### 비밀번호 찾기 ( 이메일 인증 , SHA-256 암호화)
+![편집-동영상](https://github.com/SuperMiniBeans/Back/assets/126428422/695970c3-67a6-4bf3-84c0-f128696d69c4)
+
+
+![암호화](https://github.com/SuperMiniBeans/Back/assets/126428422/2725e9c0-d34b-44f8-b57f-5ca5dd9a6453)
+
