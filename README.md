@@ -22,7 +22,7 @@
 </br>
 </br>
   
-# ✔ Stacks (SpringBoot Project) 
+# ✔ Stacks
 |   |   |
 | :--- | :--- |
 | 💻 IDE | ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)  ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)  |  
@@ -67,18 +67,44 @@
 
 ![암호화](https://github.com/SuperMiniBeans/Back/assets/126428422/2725e9c0-d34b-44f8-b57f-5ca5dd9a6453)
 
+
 </br>
 </br>
+</br>
+</br>
+
+ ### 상품기능  <a href="https://github.com/higggu/ShoppingBack/wiki/%ED%9A%8C%EC%9B%90%EA%B8%B0%EB%8A%A5" >상세보기 - WIKI 이동</a>
+상품 등록, 조회, 카테고리 분류, 상세보기, 삭제: 상품을 등록하고 목록을 조회하며,
+카테고리로 분류하고 상세 정보를 확인하며, 삭제할 수 있는 통합적인 상품 관리 기능을 제공합니다.
+
+
+</br>
+</br>
+</br>
+</br>
+
+
 ### 상품등록 및 상세보기
+
 ![2024-01-04-10-42-52](https://github.com/higggu/ShoppingBack/assets/126428422/779d26c1-e3af-4e8a-95d0-065937f83fc3)
 
 
-</br>
-</br>
+
 ### 상품분류
+
 ![2024-01-04-10-50-29](https://github.com/higggu/ShoppingBack/assets/126428422/dfc13e12-c66a-414b-aeec-33a47d1bbfac)
 
+</br>
+</br>
+
+ ### 장바구니 및 결제  <a href="https://github.com/higggu/ShoppingBack/wiki/%ED%9A%8C%EC%9B%90%EA%B8%B0%EB%8A%A5" >상세보기 - WIKI 이동</a>
+장바구니 관리 및 주문 처리 기능: 상품을 장바구니에 추가하고, 사용자의 장바구니 목록을 조회하며, 장바구니에서 수량 및 옵션을 변경하고 삭제할 수 있습니다.
+또한, 선택한 장바구니 항목들을 주문하여 결제할 수 있는 통합된 장바구니 관리 및 주문 처리 기능을 제공합니다.
 
 </br>
 </br>
-### 장바구니
+
+### 장바구니 , 결제
+![2024-01-04-14-12-48](https://github.com/higggu/ShoppingBack/assets/126428422/f8e10a28-1da6-4d2d-944f-cc536319c12a)
+
+
