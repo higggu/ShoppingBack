@@ -67,10 +67,18 @@
 
 ![암호화](https://github.com/SuperMiniBeans/Back/assets/126428422/2725e9c0-d34b-44f8-b57f-5ca5dd9a6453)
 
-
+</br>
+</br>
 ### 상품등록 및 상세보기
+![2024-01-04-10-42-52](https://github.com/higggu/ShoppingBack/assets/126428422/779d26c1-e3af-4e8a-95d0-065937f83fc3)
 
 
+</br>
+</br>
+### 상품분류
+![2024-01-04-10-50-29](https://github.com/higggu/ShoppingBack/assets/126428422/dfc13e12-c66a-414b-aeec-33a47d1bbfac)
 
 
+</br>
+</br>
 ### 장바구니
