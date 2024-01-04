@@ -73,7 +73,7 @@
 </br>
 </br>
 
- ### 상품기능  <a href="https://github.com/higggu/ShoppingBack/wiki/%ED%9A%8C%EC%9B%90%EA%B8%B0%EB%8A%A5" >상세보기 - WIKI 이동</a>
+ ### 상품기능  <a href="https://github.com/higggu/ShoppingBack/wiki/%EC%83%81%ED%92%88" >상세보기 - WIKI 이동</a>
 상품 등록, 조회, 카테고리 분류, 상세보기, 삭제: 상품을 등록하고 목록을 조회하며,
 카테고리로 분류하고 상세 정보를 확인하며, 삭제할 수 있는 통합적인 상품 관리 기능을 제공합니다.
 
