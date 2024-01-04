@@ -97,7 +97,7 @@
 </br>
 </br>
 
- ### 장바구니 및 결제  <a href="https://github.com/higggu/ShoppingBack/wiki/%ED%9A%8C%EC%9B%90%EA%B8%B0%EB%8A%A5" >상세보기 - WIKI 이동</a>
+ ### 장바구니 및 결제  <a href="https://github.com/higggu/ShoppingBack/wiki/%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EB%B0%8F-%EA%B2%B0%EC%A0%9C" >상세보기 - WIKI 이동</a>
 장바구니 관리 및 주문 처리 기능: 상품을 장바구니에 추가하고, 사용자의 장바구니 목록을 조회하며, 장바구니에서 수량 및 옵션을 변경하고 삭제할 수 있습니다.
 또한, 선택한 장바구니 항목들을 주문하여 결제할 수 있는 통합된 장바구니 관리 및 주문 처리 기능을 제공합니다.
 
